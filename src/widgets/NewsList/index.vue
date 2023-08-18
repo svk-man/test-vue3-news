@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="news">
     <NewsListItem
       v-for="newsItem in newsItems" :key="newsItem.id"
       :newsItem="newsItem"

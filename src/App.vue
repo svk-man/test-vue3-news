@@ -1,5 +1,9 @@
 <template>
-  <NewsList :newsItems="newsItems" />
+  <main class="main">
+    <div class="container">
+      <NewsList :newsItems="newsItems" />
+    </div>
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -23,6 +27,3 @@ const fetchNewsItems = () => {
 
 fetchNewsItems();
 </script>
-
-<style scoped>
-</style>
