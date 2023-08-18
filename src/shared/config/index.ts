@@ -1,0 +1,1 @@
+export const API_URL = 'https://flems.github.io/test/api/';
