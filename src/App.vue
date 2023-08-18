@@ -2,28 +2,39 @@
   <main class="main">
     <div class="container">
       <NewsList :newsItems="newsItems" />
+      <button @click="goToNextPage" v-show="isLoadPossible">Загрузить ещё</button>
     </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { reactive, toRefs } from 'vue';
+import { reactive, toRefs, computed } from 'vue';
 import { newsApi, NewsResponse, NewsItem } from './shared/api/index';
 import NewsList from './widgets/NewsList/index';
 
 
-const state = reactive<{ newsItems: NewsItem[] }>({
-  newsItems: []
+const state = reactive<{ newsItems: NewsItem[], currentPage: number, totalPages: number }>({
+  newsItems: [],
+  currentPage: 1,
+  totalPages: 1,
 });
 
-const { newsItems } = toRefs(state)
+const { newsItems, currentPage, totalPages } = toRefs(state);
 
 const fetchNewsItems = () => {
-  newsApi.news.getNewsList(1)
+  newsApi.news.getNewsList(currentPage.value)
     .then((response: NewsResponse) => {
-      state.newsItems = response.data.items
+      state.newsItems = state.newsItems.concat(response.data.items);
+      state.totalPages = response.data.nav.total;
     });
 };
 
 fetchNewsItems();
+
+const goToNextPage = () => {
+  state.currentPage += 1;
+  fetchNewsItems();
+};
+
+const isLoadPossible = computed(() => currentPage.value < totalPages.value);
 </script>
