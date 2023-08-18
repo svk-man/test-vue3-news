@@ -1,20 +1,22 @@
 <template>
   <ul class="news__list">
     <NewsListItem
-      v-for="newsItem in newsItems" :key="newsItem.id"
+      v-for="newsItem in newsItems" :key="newsItem.code"
       :newsItem="newsItem"
     />
   </ul>
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue'
+import { PropType } from 'vue'
 import NewsListItem from '../NewsListItem/index';
 import { NewsItem } from '../../shared/api/index';
 
 defineProps({
-  newsItems: Array as PropType<NewsItem[]>,
-  required: true
+  newsItems: {
+    type: Array as PropType<NewsItem[]>,
+    required: true
+  }
 });
 </script>
 

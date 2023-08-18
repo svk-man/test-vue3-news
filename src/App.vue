@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { reactive, toRefs, computed } from 'vue';
-import { newsApi, NewsResponse, NewsItem } from './shared/api/index';
+import { newsApi, NewsItem } from './shared/api/index';
 import NewsList from './widgets/NewsList/index';
 
 
@@ -43,7 +43,8 @@ const { newsItems, currentPage, totalPages } = toRefs(state);
 
 const fetchNewsItems = () => {
   newsApi.news.getNewsList(currentPage.value)
-    .then((response: NewsResponse) => {
+    // TODO: fix any
+    .then((response: any) => {
       state.newsItems = state.newsItems.concat(response.data.items);
       state.totalPages = response.data.nav.total;
     });
