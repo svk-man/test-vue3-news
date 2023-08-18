@@ -17,6 +17,14 @@
       <button class="btn news__btn" @click="goToNextPage" v-show="isLoadPossible">Загрузить ещё</button>
     </section>
   </main>
+  <div class="footer">
+    <div class="container footer__container">
+      <div class="logo footer__logo">
+        <img src="./assets/logo.png" alt="alpha">
+      </div>
+      <p class="footer__copyright">© alpha, 2023</p>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -81,6 +89,7 @@ const isLoadPossible = computed(() => currentPage.value < totalPages.value);
     font-weight: 700;
     line-height: 120%;
     letter-spacing: -0.4px;
+    color: var(--grey-color-black-90);
   }
 }
 
@@ -92,6 +101,37 @@ const isLoadPossible = computed(() => currentPage.value < totalPages.value);
   &__btn {
     margin: 0 auto;
     margin-top: 70px;
+  }
+}
+
+.footer {
+  padding: 64px 0;
+  background-color: var(--bg-bg-5);
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  &__logo {
+    width: 114px;
+    height: 36px;
+  }
+  &__copyright {
+    font-family: Nunito Sans;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+
+.logo {
+  width: 152px;
+  height: 48px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 </style>

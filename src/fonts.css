@@ -1,6 +1,13 @@
 @font-face {
   font-family: 'Nunito Sans';
   font-style: normal;
+  font-weight: 400;
+  src: local('Nunito Sans'), url(./assets/fonts/Nunito-Sans/NunitoSans_10pt-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
   font-weight: 700;
   src: local('Nunito Sans'), url(./assets/fonts/Nunito-Sans/NunitoSans_10pt-Bold.ttf) format('truetype');
 }

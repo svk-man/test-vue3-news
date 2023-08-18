@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-bg-5: #F0F6FE;
+  --grey-color-black-90: #17171A;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -14,7 +19,7 @@ body {
 }
 
 .container {
-  max-width: 1210px;
+  max-width: 1710px;
   margin: 0 auto;
 }
 
