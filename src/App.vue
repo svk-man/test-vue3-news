@@ -94,13 +94,13 @@ const isLoadPossible = computed(() => currentPage.value < totalPages.value);
 }
 
 .news {
-  padding: 35px 0;
+  padding: 64px 0 72px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   &__btn {
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 72px;
   }
 }
 

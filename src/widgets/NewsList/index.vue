@@ -26,6 +26,6 @@ defineProps({
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 65px;
+  gap: 64px 48px;
 }
 </style>
