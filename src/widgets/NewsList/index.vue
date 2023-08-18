@@ -1,5 +1,5 @@
 <template>
-  <ul class="news">
+  <ul class="news__list">
     <NewsListItem
       v-for="newsItem in newsItems" :key="newsItem.id"
       :newsItem="newsItem"
@@ -18,6 +18,14 @@ defineProps({
 });
 </script>
 
-<style scoped>
+<style lang="scss">
+.news__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 65px;
+}
 </style>
-../NewsListItem/index

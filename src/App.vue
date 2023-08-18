@@ -1,8 +1,8 @@
 <template>
   <main class="main">
-    <div class="container">
+    <div class="container news">
       <NewsList :newsItems="newsItems" />
-      <button @click="goToNextPage" v-show="isLoadPossible">Загрузить ещё</button>
+      <button class="btn news__btn" @click="goToNextPage" v-show="isLoadPossible">Загрузить ещё</button>
     </div>
   </main>
 </template>
@@ -38,3 +38,16 @@ const goToNextPage = () => {
 
 const isLoadPossible = computed(() => currentPage.value < totalPages.value);
 </script>
+
+<style lang="scss">
+.news {
+  padding: 35px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__btn {
+    margin: 0 auto;
+    margin-top: 70px;
+  }
+}
+</style>

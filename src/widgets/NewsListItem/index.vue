@@ -24,17 +24,8 @@ defineProps({
 </script>
 
 <style lang="scss">
-.news {
-  margin: 0;
-  padding: 35px 0;
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 65px;
-  &__item .news-item {
-    height: 100%;
-  }
+.news__item .news-item {
+  height: 100%;
 }
 
 .news-item {
